@@ -5,7 +5,7 @@ namespace Linkli
     class Program
     {
         /// <summary>
-        /// UC1- Linked list with 56,30,70
+        /// UC2-Ablitity to insert between 56 & 70 in the linked list
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args)
@@ -13,10 +13,12 @@ namespace Linkli
             Console.WriteLine("Linked list program");
             Linkedli list = new Linkedli();
             list.Insert(56);
-            list.Insert(30);
             list.Insert(70);
             Console.WriteLine("List elements");
-            list.Show();;
+            list.Show();
+            list.InsertAt(1, 30);
+            Console.WriteLine("List elements after inserting 30");
+            list.Show();
         }
     }
 }

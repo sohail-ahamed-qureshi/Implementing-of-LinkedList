@@ -78,7 +78,7 @@ namespace Linkli
         /// <summary>
         /// delete the first element only
         /// </summary>
-        public void DeleteFirst()
+        public void Pop()
         {
             head = head.next;
         }
