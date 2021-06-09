@@ -5,7 +5,7 @@ namespace Linkli
     class Program
     {
         /// <summary>
-        /// UC3-Ablitity to delete first element from the list.
+        /// UC5-Ablitity to Search for an element in the list.
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args)
@@ -14,13 +14,14 @@ namespace Linkli
             Linkedli list = new Linkedli();
             list.Insert(56);
             list.Insert(70);
+            list.Insert(20);
+            list.Insert(10);
             list.InsertAt(1, 30);
             Console.WriteLine("List elements");
             list.Show();
-            list.PopLast();
-            Console.WriteLine("List elements after popLast()");
-            list.Show();
-
+            list.Search(56);
+            list.Search(30);
+            list.Search(16);
         }
     }
 }

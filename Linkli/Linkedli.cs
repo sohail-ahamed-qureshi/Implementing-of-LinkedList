@@ -128,5 +128,36 @@ namespace Linkli
                 temp.next = null; 
             }
         }
+        /// <summary>
+        /// check whether the list is empty and returns boolean value.
+        /// </summary>
+        /// <returns></returns>
+        internal bool isEmpty()
+        {
+            if(head == null)
+                return true;
+            else
+                return false;
+        }
+        /// <summary>
+        /// Ability to search for an element in the list
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        internal Node Search(int data)
+        {
+            Node temp = head;
+                while (temp != null) //check for middle elements in list
+                {
+                    if (temp.data == data)
+                    {
+                        Console.WriteLine($"{data} is present in list.");
+                        return temp;
+                    }
+                        temp = temp.next;
+                }
+            Console.WriteLine($"{data} is not present in list.");
+            return null;
+        }
     }
 }
