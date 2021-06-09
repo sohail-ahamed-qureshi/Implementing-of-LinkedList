@@ -8,7 +8,7 @@ namespace Linkli
         /// main program.
         /// </summary>
         /// <param name="args"></param>
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Linked list program");
             Linkedli list = new Linkedli();
@@ -18,8 +18,11 @@ namespace Linkli
             list.Insert(11);
             list.InsertAtStart(25);
             list.InsertAt(2, 33);
+            Console.WriteLine("List elements");
             list.Show();
-
+            list.DeleteAt(2);
+            Console.WriteLine("After delete List elements");
+            list.Show();
         }
     }
 }

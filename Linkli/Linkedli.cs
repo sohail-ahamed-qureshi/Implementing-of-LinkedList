@@ -16,7 +16,6 @@ namespace Linkli
             Node node = new Node();
             node.data = data;
             node.next = null;
-
             if(head == null)
             {
                 head = node; 
@@ -45,10 +44,10 @@ namespace Linkli
             head = node;
         }
         /// <summary>
-        /// Insert at particular index
+        /// Insert elements at particular index
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="data"></param>
+        /// <param name="index">memory location at which data to be inserted</param>
+        /// <param name="data">actual data to be inserted</param>
         public void InsertAt(int index, int data)
         {
             Node node = new Node();
@@ -64,7 +63,7 @@ namespace Linkli
             n.next = node;
         }
         /// <summary>
-        /// display list
+        /// print the list of elements
         /// </summary>
         public void Show()
         {
@@ -75,6 +74,36 @@ namespace Linkli
                 node = node.next;
             }
             Console.WriteLine(node.data);
+        }
+        /// <summary>
+        /// delete the first element only
+        /// </summary>
+        public void DeleteFirst()
+        {
+            head = head.next;
+        }
+        /// <summary>
+        /// delete function at particular index
+        /// </summary>
+        /// <param name="index">memory location at which data has to be deleted</param>
+        public void DeleteAt(int index)
+        {
+            if(index == 0)
+            {
+                head = head.next;
+            }
+            else
+            {
+                Node n = head;
+               // Node n1 = null;
+                for (int i = 0; i < index - 1; i++)
+                {
+                    n = n.next;
+                }
+               // n1 = n.next;
+                //n.next = n1.next;
+                n.next = n.next.next;
+            }
         }
     }
 }
