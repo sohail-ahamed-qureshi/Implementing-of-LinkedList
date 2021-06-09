@@ -5,7 +5,7 @@ namespace Linkli
     class Program
     {
         /// <summary>
-        /// UC2-Ablitity to insert between 56 & 70 in the linked list
+        /// UC3-Ablitity to delete first element from the list.
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args)
@@ -14,11 +14,13 @@ namespace Linkli
             Linkedli list = new Linkedli();
             list.Insert(56);
             list.Insert(70);
+            list.InsertAt(1, 30);
             Console.WriteLine("List elements");
             list.Show();
-            list.InsertAt(1, 30);
-            Console.WriteLine("List elements after inserting 30");
+            list.Pop();
+            Console.WriteLine("List elements after pop()");
             list.Show();
+
         }
     }
 }
