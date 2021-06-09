@@ -21,6 +21,11 @@ namespace Linkli
             list.InsertAt(index + 1, 40);
             Console.WriteLine("List elements");
             list.Show();
+            list.Remove(40);
+            list.Size();
+            Console.WriteLine("List elements");
+            list.Show();
+
         }
     }
 }

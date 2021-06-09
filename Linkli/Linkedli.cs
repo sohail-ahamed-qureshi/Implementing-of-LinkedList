@@ -11,7 +11,7 @@ namespace Linkli
         /// indert data at the end
         /// </summary>
         /// <param name="data"></param>
-        public void Insert(int data)
+        internal void Insert(int data)
         {
             Node node = new Node();
             node.data = data;
@@ -34,7 +34,7 @@ namespace Linkli
         /// Insert node at start.
         /// </summary>
         /// <param name="data"></param>
-        public void InsertAtStart(int data)
+        internal void InsertAtStart(int data)
         {
             Node node = new Node();
             node.data = data;
@@ -48,7 +48,7 @@ namespace Linkli
         /// </summary>
         /// <param name="index">memory location at which data to be inserted</param>
         /// <param name="data">actual data to be inserted</param>
-        public void InsertAt(int index, int data)
+        internal void InsertAt(int index, int data)
         {
             Node node = new Node();
             node.data = data;
@@ -65,7 +65,7 @@ namespace Linkli
         /// <summary>
         /// print the list of elements
         /// </summary>
-        public void Show()
+        internal void Show()
         {
             Node node = head;
             while (node.next != null)
@@ -78,7 +78,7 @@ namespace Linkli
         /// <summary>
         /// delete the first element only
         /// </summary>
-        public void Pop()
+        internal void Pop()
         {
             head = head.next;
         }
@@ -86,7 +86,7 @@ namespace Linkli
         /// delete function at particular index
         /// </summary>
         /// <param name="index">memory location at which data has to be deleted</param>
-        public void DeleteAt(int index)
+        internal void DeleteAt(int index)
         {
             if (index == 0)
             {
@@ -166,11 +166,12 @@ namespace Linkli
         /// </summary>
         internal void Size()
         {
+            Node temp = head;
             int count = 0;
-            while (head != null)
+            while (temp != null)
             {
                 count++;
-                head = head.next;
+                temp = temp.next;
             }
             Console.WriteLine($"size of list is {count}");
         }
