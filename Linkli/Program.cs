@@ -19,13 +19,11 @@ namespace Linkli
             list.Show();
             int index = list.Search(30);
             list.InsertAt(index + 1, 40);
-            Console.WriteLine("List elements");
+            Console.WriteLine("Unordered List elements");
             list.Show();
-            list.Remove(40);
-            list.Size();
-            Console.WriteLine("List elements");
+            list.SortList();
+            Console.WriteLine("Ordered List elements");
             list.Show();
-
         }
     }
 }

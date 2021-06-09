@@ -184,6 +184,36 @@ namespace Linkli
             int index = Search(data);
             DeleteAt(index);
         }
+        /// <summary>
+        /// ability to sort the list in ascending order.
+        /// </summary>
+        internal void SortList()
+        {
+            if (head == null)
+                return;
+            else
+            {
+                int store;
+                Node temp = head;
+                Node temp1 = null;
+                while (temp != null)
+                {
+                    temp1 = temp.next;
+                    while (temp1 != null)
+                    {
+                        if(temp.data.CompareTo(temp1.data) > 0)
+                        {
+                            store = temp.data;
+                            temp.data = temp1.data;
+                            temp1.data = store;
+                        }
+                        temp1 = temp1.next;
+                    }
+                    temp = temp.next;
+                }
+            }
+
+        }
     }
 }
 
