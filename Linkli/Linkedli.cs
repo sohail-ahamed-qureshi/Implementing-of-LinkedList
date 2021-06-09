@@ -16,14 +16,14 @@ namespace Linkli
             Node node = new Node();
             node.data = data;
             node.next = null;
-            if(head == null)
+            if (head == null)
             {
-                head = node; 
+                head = node;
             }
             else
             {
                 Node n = head;
-                while(n.next != null)
+                while (n.next != null)
                 {
                     n = n.next;
                 }
@@ -55,7 +55,7 @@ namespace Linkli
             node.next = null;
 
             Node n = head;
-            for(int i=0; i < index-1; i++)
+            for (int i = 0; i < index - 1; i++)
             {
                 n = n.next;
             }
@@ -68,7 +68,7 @@ namespace Linkli
         public void Show()
         {
             Node node = head;
-            while(node.next != null)
+            while (node.next != null)
             {
                 Console.WriteLine(node.data);
                 node = node.next;
@@ -88,19 +88,19 @@ namespace Linkli
         /// <param name="index">memory location at which data has to be deleted</param>
         public void DeleteAt(int index)
         {
-            if(index == 0)
+            if (index == 0)
             {
                 head = head.next;
             }
             else
             {
                 Node n = head;
-               // Node n1 = null;
+                // Node n1 = null;
                 for (int i = 0; i < index - 1; i++)
                 {
                     n = n.next;
                 }
-               // n1 = n.next;
+                // n1 = n.next;
                 //n.next = n1.next;
                 n.next = n.next.next;
             }
@@ -111,21 +111,21 @@ namespace Linkli
         internal void PopLast()
         {
             Node temp = head;
-            if(head == null)
+            if (head == null)
             {
                 Console.WriteLine("No elements to delete");
             }
-            if(head.next == null)
+            if (head.next == null)
             {
                 head = null;
             }
             else
             {
-                while(temp.next.next != null)
+                while (temp.next.next != null)
                 {
                     temp = temp.next;
                 }
-                temp.next = null; 
+                temp.next = null;
             }
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace Linkli
         /// <returns></returns>
         internal bool isEmpty()
         {
-            if(head == null)
+            if (head == null)
                 return true;
             else
                 return false;
@@ -144,20 +144,45 @@ namespace Linkli
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        internal Node Search(int data)
+        internal int Search(int data)
         {
             Node temp = head;
-                while (temp != null) //check for middle elements in list
+            int count = 0;
+            while (temp != null) //check for middle elements in list
+            {
+                if (temp.data == data)
                 {
-                    if (temp.data == data)
-                    {
-                        Console.WriteLine($"{data} is present in list.");
-                        return temp;
-                    }
-                        temp = temp.next;
+                    Console.WriteLine($"{data} is present at {count} in list.");
+                    return count;
                 }
+                count++;
+                temp = temp.next;
+            }
             Console.WriteLine($"{data} is not present in list.");
-            return null;
+            return 0;
+        }
+        /// <summary>
+        /// ability to find the length of the list.
+        /// </summary>
+        internal void Size()
+        {
+            int count = 0;
+            while (head != null)
+            {
+                count++;
+                head = head.next;
+            }
+            Console.WriteLine($"size of list is {count}");
+        }
+        /// <summary>
+        /// Ability to remove an element from the node 
+        /// </summary>
+        /// <param name="data"></param>
+        internal void Remove(int data)
+        {
+            int index = Search(data);
+            DeleteAt(index);
         }
     }
 }
+

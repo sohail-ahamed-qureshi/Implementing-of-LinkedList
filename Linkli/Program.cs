@@ -13,15 +13,14 @@ namespace Linkli
             Console.WriteLine("Linked list program");
             Linkedli list = new Linkedli();
             list.Insert(56);
+            list.Insert(30);
             list.Insert(70);
-            list.Insert(20);
-            list.Insert(10);
-            list.InsertAt(1, 30);
             Console.WriteLine("List elements");
             list.Show();
-            list.Search(56);
-            list.Search(30);
-            list.Search(16);
+            int index = list.Search(30);
+            list.InsertAt(index + 1, 40);
+            Console.WriteLine("List elements");
+            list.Show();
         }
     }
 }
