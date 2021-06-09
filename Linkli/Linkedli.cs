@@ -105,5 +105,28 @@ namespace Linkli
                 n.next = n.next.next;
             }
         }
+        /// <summary>
+        /// Ablitity to delete last item of list.
+        /// </summary>
+        internal void PopLast()
+        {
+            Node temp = head;
+            if(head == null)
+            {
+                Console.WriteLine("No elements to delete");
+            }
+            if(head.next == null)
+            {
+                head = null;
+            }
+            else
+            {
+                while(temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = null; 
+            }
+        }
     }
 }

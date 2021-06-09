@@ -17,8 +17,8 @@ namespace Linkli
             list.InsertAt(1, 30);
             Console.WriteLine("List elements");
             list.Show();
-            list.Pop();
-            Console.WriteLine("List elements after pop()");
+            list.PopLast();
+            Console.WriteLine("List elements after popLast()");
             list.Show();
 
         }
